@@ -604,6 +604,7 @@ function Index() {
                 <div className="text-sm font-semibold text-white">VBAC & natural birth research</div>
                 <p className="mt-2 text-sm leading-6 text-slate-400">Use this space to establish authority without making guaranteed outcome claims.</p>
               </div>
+              </div>
             </div>
           </div>
         </section>
