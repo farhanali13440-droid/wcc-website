@@ -407,20 +407,21 @@ function Index() {
               <div className="absolute -left-8 top-10 h-40 w-40 rounded-full bg-rose-200/40 blur-3xl" />
               <div className="absolute -right-6 bottom-6 h-48 w-48 rounded-full bg-amber-100/60 blur-3xl" />
               <div className="relative overflow-hidden rounded-[2.5rem] border border-white bg-white p-3 shadow-[0_30px_100px_-40px_rgba(15,23,42,0.35)]">
-                <div className="grid min-h-[560px] place-items-center rounded-[2rem] bg-gradient-to-br from-rose-50 via-white to-amber-50 p-10 text-center">
-                  <div>
-                    <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-[2rem] bg-white text-rose-500 shadow-sm">
-                      <UserRound className="h-10 w-10" />
-                    </div>
-                    <p className="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-rose-500">Asst. Prof. Dr. Laila Nazir</p>
-                    <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">Consultant Gynaecologist & Obstetrician</h2>
-                    <p className="mx-auto mt-4 max-w-sm text-sm leading-6 text-slate-600">A calm, private starting point for women seeking clearer answers and personalized care.</p>
-                    <div className="mx-auto mt-7 grid max-w-xs grid-cols-2 gap-3 text-left">
-                      <div className="rounded-2xl border border-white/80 bg-white/80 p-4">
+                <div className="overflow-hidden rounded-[2rem] bg-gradient-to-br from-rose-50 via-white to-amber-50">
+                  <img
+                    src={doctorPortrait.url}
+                    alt="Asst. Prof. Dr. Laila Nazir, Consultant Gynaecologist & Obstetrician at Women Care Clinic"
+                    className="h-[520px] w-full object-cover object-top"
+                  />
+                  <div className="p-7 text-center">
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-rose-500">Asst. Prof. Dr. Laila Nazir</p>
+                    <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">Consultant Gynaecologist & Obstetrician</h2>
+                    <div className="mx-auto mt-6 grid max-w-xs grid-cols-2 gap-3 text-left">
+                      <div className="rounded-2xl border border-slate-200/70 bg-white/80 p-4">
                         <div className="text-xl font-semibold text-slate-950">12+</div>
                         <div className="mt-1 text-xs text-slate-500">Years experience</div>
                       </div>
-                      <div className="rounded-2xl border border-white/80 bg-white/80 p-4">
+                      <div className="rounded-2xl border border-slate-200/70 bg-white/80 p-4">
                         <div className="text-xl font-semibold text-slate-950">Peshawar</div>
                         <div className="mt-1 text-xs text-slate-500">Hayatabad</div>
                       </div>
