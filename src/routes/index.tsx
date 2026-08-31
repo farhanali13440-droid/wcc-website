@@ -17,6 +17,15 @@ import {
   UserRound,
   X,
 } from "lucide-react";
+import doctorPortrait from "@/assets/doctor-portrait.png.asset.json";
+import consultationImage from "@/assets/consultation.png.asset.json";
+import pregnancyImage from "@/assets/pregnancy-care.png.asset.json";
+import gynaecologyImage from "@/assets/gynaecology.png.asset.json";
+import ultrasoundImage from "@/assets/ultrasound.png.asset.json";
+import treatmentImage from "@/assets/treatment.png.asset.json";
+import maternityImage from "@/assets/maternity-newborn.png.asset.json";
+import receptionImage from "@/assets/clinic-reception.png.asset.json";
+import wccLogo from "@/assets/wcc-logo.jpeg.asset.json";
 
 const phone = "+923338390207";
 const displayPhone = "+92 333 8390207";
@@ -28,30 +37,40 @@ const serviceGroups = [
   {
     title: "Obstetric Care",
     icon: Baby,
+    image: pregnancyImage.url,
+    imageAlt: "Dr. Laila Nazir explaining pregnancy care to an expecting mother at Women Care Clinic",
     description: "Thoughtful support across pregnancy, birth planning and recovery.",
     items: ["Antenatal Care", "Normal Delivery", "C-Section", "Postnatal Care"],
   },
   {
     title: "Gynaecological Care",
     icon: HeartPulse,
+    image: gynaecologyImage.url,
+    imageAlt: "Gynaecology consultation with Dr. Laila Nazir reviewing a patient's health record",
     description: "Private, attentive care for common and complex women's health concerns.",
     items: ["General Gynaecology", "Family Planning", "Infertility Treatment", "Menopause Care"],
   },
   {
     title: "Screening & Diagnostics",
     icon: ShieldCheck,
+    image: ultrasoundImage.url,
+    imageAlt: "Ultrasound scan being performed for a pregnant patient at Women Care Clinic",
     description: "Appropriate screening and diagnostic support to bring more clarity to your care.",
     items: ["2D Ultrasound", "Lab Testing", "Pap Smear & Screening", "Breast Screening"],
   },
   {
     title: "Procedures & Treatments",
     icon: Stethoscope,
+    image: treatmentImage.url,
+    imageAlt: "Clinical treatment consultation in a private women-only examination room",
     description: "Professional guidance for selected procedures and women's health treatments.",
     items: ["IUD Insertion/Removal", "D&C", "Miscarriage Management", "Infection Treatment"],
   },
   {
     title: "Whole-Woman Support",
     icon: Sparkles,
+    image: consultationImage.url,
+    imageAlt: "Dr. Laila Nazir listening to a patient during a personalised consultation",
     description: "Support that considers your stage of life, goals and everyday wellbeing.",
     items: ["Pre-marital Counseling", "Nutrition Guidance", "Teen Health", "Well-Woman Checkups"],
   },
@@ -286,9 +305,11 @@ function Index() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-[#fbfaf7]/90 backdrop-blur-xl">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
           <button onClick={() => navTo("top")} className="flex items-center gap-3 text-left">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-rose-100 text-rose-600">
-              <HeartPulse className="h-5 w-5" />
-            </div>
+            <img
+              src={wccLogo.url}
+              alt="Women Care Clinic logo"
+              className="h-12 w-12 rounded-2xl object-contain"
+            />
             <div>
               <div className="text-sm font-semibold tracking-wide text-slate-950">Women Care Clinic</div>
               <div className="text-[11px] font-medium text-slate-500">Peshawar • Women's Healthcare</div>
@@ -303,7 +324,7 @@ function Index() {
               ["Patient Journey", "journey"],
               ["FAQs", "faqs"],
             ].map(([label, id]) => (
-              <button key={id} onClick={() => navTo(id)} className="text-sm font-medium text-slate-600 transition hover:text-slate-950">
+              <button key={id} onClick={() => navTo(id!)} className="text-sm font-medium text-slate-600 transition hover:text-slate-950">
                 {label}
               </button>
             ))}
@@ -333,7 +354,7 @@ function Index() {
                 ["Patient Journey", "journey"],
                 ["FAQs", "faqs"],
               ].map(([label, id]) => (
-                <button key={id} onClick={() => navTo(id)} className="rounded-xl px-3 py-3 text-left text-sm font-medium text-slate-700 hover:bg-white">
+                <button key={id} onClick={() => navTo(id!)} className="rounded-xl px-3 py-3 text-left text-sm font-medium text-slate-700 hover:bg-white">
                   {label}
                 </button>
               ))}
@@ -386,20 +407,21 @@ function Index() {
               <div className="absolute -left-8 top-10 h-40 w-40 rounded-full bg-rose-200/40 blur-3xl" />
               <div className="absolute -right-6 bottom-6 h-48 w-48 rounded-full bg-amber-100/60 blur-3xl" />
               <div className="relative overflow-hidden rounded-[2.5rem] border border-white bg-white p-3 shadow-[0_30px_100px_-40px_rgba(15,23,42,0.35)]">
-                <div className="grid min-h-[560px] place-items-center rounded-[2rem] bg-gradient-to-br from-rose-50 via-white to-amber-50 p-10 text-center">
-                  <div>
-                    <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-[2rem] bg-white text-rose-500 shadow-sm">
-                      <UserRound className="h-10 w-10" />
-                    </div>
-                    <p className="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-rose-500">Asst. Prof. Dr. Laila Nazir</p>
-                    <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">Consultant Gynaecologist & Obstetrician</h2>
-                    <p className="mx-auto mt-4 max-w-sm text-sm leading-6 text-slate-600">A calm, private starting point for women seeking clearer answers and personalized care.</p>
-                    <div className="mx-auto mt-7 grid max-w-xs grid-cols-2 gap-3 text-left">
-                      <div className="rounded-2xl border border-white/80 bg-white/80 p-4">
+                <div className="overflow-hidden rounded-[2rem] bg-gradient-to-br from-rose-50 via-white to-amber-50">
+                  <img
+                    src={doctorPortrait.url}
+                    alt="Asst. Prof. Dr. Laila Nazir, Consultant Gynaecologist & Obstetrician at Women Care Clinic"
+                    className="h-[520px] w-full object-cover object-top"
+                  />
+                  <div className="p-7 text-center">
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-rose-500">Asst. Prof. Dr. Laila Nazir</p>
+                    <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">Consultant Gynaecologist & Obstetrician</h2>
+                    <div className="mx-auto mt-6 grid max-w-xs grid-cols-2 gap-3 text-left">
+                      <div className="rounded-2xl border border-slate-200/70 bg-white/80 p-4">
                         <div className="text-xl font-semibold text-slate-950">12+</div>
                         <div className="mt-1 text-xs text-slate-500">Years experience</div>
                       </div>
-                      <div className="rounded-2xl border border-white/80 bg-white/80 p-4">
+                      <div className="rounded-2xl border border-slate-200/70 bg-white/80 p-4">
                         <div className="text-xl font-semibold text-slate-950">Peshawar</div>
                         <div className="mt-1 text-xs text-slate-500">Hayatabad</div>
                       </div>
@@ -456,11 +478,11 @@ function Index() {
             </div>
             <div className="rounded-[2rem] border border-white/10 bg-white/5 p-7 sm:p-9">
               <div className="text-5xl leading-none text-rose-300">“</div>
-              <blockquote className="mt-4 text-2xl font-medium leading-10 text-white sm:text-3xl">{testimonials[testimonial].quote}</blockquote>
+              <blockquote className="mt-4 text-2xl font-medium leading-10 text-white sm:text-3xl">{testimonials[testimonial]!.quote}</blockquote>
               <div className="mt-8 flex items-center justify-between gap-4 border-t border-white/10 pt-5">
                 <div>
-                  <div className="font-semibold">{testimonials[testimonial].name}</div>
-                  <div className="mt-1 text-sm text-slate-400">{testimonials[testimonial].source}</div>
+                  <div className="font-semibold">{testimonials[testimonial]!.name}</div>
+                  <div className="mt-1 text-sm text-slate-400">{testimonials[testimonial]!.source}</div>
                 </div>
                 <div className="flex gap-1">
                   {testimonials.map((item, index) => (
@@ -493,17 +515,20 @@ function Index() {
 
         <section className="bg-white">
           <div id="about" className="mx-auto grid max-w-7xl scroll-mt-24 gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-10 lg:py-24">
-            <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-rose-50 via-white to-amber-50 p-8">
-              <div className="flex min-h-[520px] items-end rounded-[2rem] border border-white/80 bg-white/40 p-7">
-                <div>
-                  <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-white shadow-sm text-rose-600"><UserRound className="h-7 w-7" /></div>
-                  <h3 className="mt-7 text-3xl font-semibold tracking-tight">Meet Dr. Laila Nazir</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">Consultant Gynaecologist & Obstetrician</p>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {["MBBS", "FCPS", "MHPE / CHPE", "MRCPI Obs & Gynae (Ireland)", "Member ACOG"].map((credential) => (
-                      <span key={credential} className="rounded-full border border-white bg-white/80 px-3 py-1.5 text-xs font-semibold text-slate-600">{credential}</span>
-                    ))}
-                  </div>
+            <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-rose-50 via-white to-amber-50 p-4">
+              <img
+                src={consultationImage.url}
+                alt="Dr. Laila Nazir in a personalised consultation with a female patient"
+                className="h-[420px] w-full rounded-[2rem] object-cover"
+              />
+              <div className="rounded-[2rem] p-5">
+                <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-white shadow-sm text-rose-600"><UserRound className="h-6 w-6" /></div>
+                <h3 className="mt-6 text-3xl font-semibold tracking-tight">Meet Dr. Laila Nazir</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">Consultant Gynaecologist & Obstetrician</p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {["MBBS", "FCPS", "MHPE / CHPE", "MRCPI Obs & Gynae (Ireland)", "Member ACOG"].map((credential) => (
+                    <span key={credential} className="rounded-full border border-white bg-white/80 px-3 py-1.5 text-xs font-semibold text-slate-600">{credential}</span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -532,8 +557,10 @@ function Index() {
               <p className="mt-5 text-lg leading-8 text-slate-600">Explore the clinic's core service areas, from pregnancy and fertility to everyday gynaecological care and screening.</p>
             </div>
             <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {serviceGroups.map(({ title, description, items, icon: Icon }) => (
-                <div key={title} className="group rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+              {serviceGroups.map(({ title, description, items, icon: Icon, image, imageAlt }) => (
+                <div key={title} className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+                  <img src={image} alt={imageAlt} loading="lazy" className="aspect-[4/3] w-full object-cover" />
+                  <div className="p-7">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-50 text-rose-600"><Icon className="h-6 w-6" /></div>
                   <h3 className="mt-6 text-xl font-semibold text-slate-950">{title}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-500">{description}</p>
@@ -543,6 +570,7 @@ function Index() {
                     ))}
                   </div>
                   <button onClick={() => setBookingOpen(true)} className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-slate-950">Book Appointment <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" /></button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -561,13 +589,21 @@ function Index() {
                 ))}
               </div>
             </div>
-            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-7">
+            <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5">
+              <img
+                src={maternityImage.url}
+                alt="New mother holding her newborn baby with maternity nursing support at the hospital"
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover"
+              />
+              <div className="p-7">
               <div className="text-sm font-semibold uppercase tracking-[0.15em] text-rose-300">Evidence-based care</div>
               <h3 className="mt-4 text-2xl font-semibold">Clinical experience that respects informed decisions.</h3>
               <p className="mt-4 text-sm leading-7 text-slate-300">The existing website highlights Dr. Laila's research work related to VBAC, natural birth and carefully monitored normal delivery approaches when medically appropriate.</p>
               <div className="mt-7 rounded-3xl bg-white/5 p-5">
                 <div className="text-sm font-semibold text-white">VBAC & natural birth research</div>
                 <p className="mt-2 text-sm leading-6 text-slate-400">Use this space to establish authority without making guaranteed outcome claims.</p>
+              </div>
               </div>
             </div>
           </div>
@@ -671,6 +707,12 @@ function Index() {
                 <a href={mapUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white"><MapPin className="h-4 w-4" /> Open in Google Maps</a>
                 <a href={`tel:${phone}`} className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700"><Phone className="h-4 w-4" /> Call Clinic</a>
               </div>
+              <img
+                src={receptionImage.url}
+                alt="Women Care Clinic reception desk at Health Net Hospital, Hayatabad Peshawar"
+                loading="lazy"
+                className="mt-8 aspect-[16/9] w-full rounded-3xl border border-slate-200 object-cover"
+              />
             </div>
             <div className="rounded-3xl border border-slate-200 bg-[#fbfaf7] p-6">
               <div className="flex items-center gap-3 text-slate-950"><Clock3 className="h-5 w-5 text-rose-500" /><span className="font-semibold">Clinic hours</span></div>
@@ -686,7 +728,7 @@ function Index() {
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-10 sm:px-8 lg:flex-row lg:items-end lg:justify-between lg:px-10">
           <div>
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-rose-100 text-rose-600"><HeartPulse className="h-5 w-5" /></div>
+              <img src={wccLogo.url} alt="Women Care Clinic logo" className="h-11 w-11 rounded-2xl object-contain" />
               <div>
                 <div className="text-sm font-semibold text-slate-950">Women Care Clinic</div>
                 <div className="text-xs text-slate-500">Expert, compassionate and privacy-focused women's healthcare in Peshawar.</div>
