@@ -515,17 +515,20 @@ function Index() {
 
         <section className="bg-white">
           <div id="about" className="mx-auto grid max-w-7xl scroll-mt-24 gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-10 lg:py-24">
-            <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-rose-50 via-white to-amber-50 p-8">
-              <div className="flex min-h-[520px] items-end rounded-[2rem] border border-white/80 bg-white/40 p-7">
-                <div>
-                  <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-white shadow-sm text-rose-600"><UserRound className="h-7 w-7" /></div>
-                  <h3 className="mt-7 text-3xl font-semibold tracking-tight">Meet Dr. Laila Nazir</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">Consultant Gynaecologist & Obstetrician</p>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {["MBBS", "FCPS", "MHPE / CHPE", "MRCPI Obs & Gynae (Ireland)", "Member ACOG"].map((credential) => (
-                      <span key={credential} className="rounded-full border border-white bg-white/80 px-3 py-1.5 text-xs font-semibold text-slate-600">{credential}</span>
-                    ))}
-                  </div>
+            <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-rose-50 via-white to-amber-50 p-4">
+              <img
+                src={consultationImage.url}
+                alt="Dr. Laila Nazir in a personalised consultation with a female patient"
+                className="h-[420px] w-full rounded-[2rem] object-cover"
+              />
+              <div className="rounded-[2rem] p-5">
+                <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-white shadow-sm text-rose-600"><UserRound className="h-6 w-6" /></div>
+                <h3 className="mt-6 text-3xl font-semibold tracking-tight">Meet Dr. Laila Nazir</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">Consultant Gynaecologist & Obstetrician</p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {["MBBS", "FCPS", "MHPE / CHPE", "MRCPI Obs & Gynae (Ireland)", "Member ACOG"].map((credential) => (
+                    <span key={credential} className="rounded-full border border-white bg-white/80 px-3 py-1.5 text-xs font-semibold text-slate-600">{credential}</span>
+                  ))}
                 </div>
               </div>
             </div>
