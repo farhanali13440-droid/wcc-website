@@ -324,7 +324,7 @@ function Index() {
               ["Patient Journey", "journey"],
               ["FAQs", "faqs"],
             ].map(([label, id]) => (
-              <button key={id} onClick={() => navTo(id)} className="text-sm font-medium text-slate-600 transition hover:text-slate-950">
+              <button key={id} onClick={() => navTo(id!)} className="text-sm font-medium text-slate-600 transition hover:text-slate-950">
                 {label}
               </button>
             ))}
@@ -354,7 +354,7 @@ function Index() {
                 ["Patient Journey", "journey"],
                 ["FAQs", "faqs"],
               ].map(([label, id]) => (
-                <button key={id} onClick={() => navTo(id)} className="rounded-xl px-3 py-3 text-left text-sm font-medium text-slate-700 hover:bg-white">
+                <button key={id} onClick={() => navTo(id!)} className="rounded-xl px-3 py-3 text-left text-sm font-medium text-slate-700 hover:bg-white">
                   {label}
                 </button>
               ))}
@@ -478,11 +478,11 @@ function Index() {
             </div>
             <div className="rounded-[2rem] border border-white/10 bg-white/5 p-7 sm:p-9">
               <div className="text-5xl leading-none text-rose-300">“</div>
-              <blockquote className="mt-4 text-2xl font-medium leading-10 text-white sm:text-3xl">{testimonials[testimonial].quote}</blockquote>
+              <blockquote className="mt-4 text-2xl font-medium leading-10 text-white sm:text-3xl">{testimonials[testimonial]!.quote}</blockquote>
               <div className="mt-8 flex items-center justify-between gap-4 border-t border-white/10 pt-5">
                 <div>
-                  <div className="font-semibold">{testimonials[testimonial].name}</div>
-                  <div className="mt-1 text-sm text-slate-400">{testimonials[testimonial].source}</div>
+                  <div className="font-semibold">{testimonials[testimonial]!.name}</div>
+                  <div className="mt-1 text-sm text-slate-400">{testimonials[testimonial]!.source}</div>
                 </div>
                 <div className="flex gap-1">
                   {testimonials.map((item, index) => (
