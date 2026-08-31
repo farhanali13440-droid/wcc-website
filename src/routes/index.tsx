@@ -707,6 +707,12 @@ function Index() {
                 <a href={mapUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white"><MapPin className="h-4 w-4" /> Open in Google Maps</a>
                 <a href={`tel:${phone}`} className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700"><Phone className="h-4 w-4" /> Call Clinic</a>
               </div>
+              <img
+                src={receptionImage.url}
+                alt="Women Care Clinic reception desk at Health Net Hospital, Hayatabad Peshawar"
+                loading="lazy"
+                className="mt-8 aspect-[16/9] w-full rounded-3xl border border-slate-200 object-cover"
+              />
             </div>
             <div className="rounded-3xl border border-slate-200 bg-[#fbfaf7] p-6">
               <div className="flex items-center gap-3 text-slate-950"><Clock3 className="h-5 w-5 text-rose-500" /><span className="font-semibold">Clinic hours</span></div>
