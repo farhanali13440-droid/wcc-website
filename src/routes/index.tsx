@@ -557,8 +557,10 @@ function Index() {
               <p className="mt-5 text-lg leading-8 text-slate-600">Explore the clinic's core service areas, from pregnancy and fertility to everyday gynaecological care and screening.</p>
             </div>
             <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {serviceGroups.map(({ title, description, items, icon: Icon }) => (
-                <div key={title} className="group rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+              {serviceGroups.map(({ title, description, items, icon: Icon, image, imageAlt }) => (
+                <div key={title} className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+                  <img src={image} alt={imageAlt} loading="lazy" className="aspect-[4/3] w-full object-cover" />
+                  <div className="p-7">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-50 text-rose-600"><Icon className="h-6 w-6" /></div>
                   <h3 className="mt-6 text-xl font-semibold text-slate-950">{title}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-500">{description}</p>
