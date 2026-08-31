@@ -570,6 +570,7 @@ function Index() {
                     ))}
                   </div>
                   <button onClick={() => setBookingOpen(true)} className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-slate-950">Book Appointment <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" /></button>
+                  </div>
                 </div>
               ))}
             </div>
