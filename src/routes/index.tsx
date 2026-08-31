@@ -17,6 +17,15 @@ import {
   UserRound,
   X,
 } from "lucide-react";
+import doctorPortrait from "@/assets/doctor-portrait.png.asset.json";
+import consultationImage from "@/assets/consultation.png.asset.json";
+import pregnancyImage from "@/assets/pregnancy-care.png.asset.json";
+import gynaecologyImage from "@/assets/gynaecology.png.asset.json";
+import ultrasoundImage from "@/assets/ultrasound.png.asset.json";
+import treatmentImage from "@/assets/treatment.png.asset.json";
+import maternityImage from "@/assets/maternity-newborn.png.asset.json";
+import receptionImage from "@/assets/clinic-reception.png.asset.json";
+import wccLogo from "@/assets/wcc-logo.jpeg.asset.json";
 
 const phone = "+923338390207";
 const displayPhone = "+92 333 8390207";
