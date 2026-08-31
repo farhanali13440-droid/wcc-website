@@ -728,7 +728,7 @@ function Index() {
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-10 sm:px-8 lg:flex-row lg:items-end lg:justify-between lg:px-10">
           <div>
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-rose-100 text-rose-600"><HeartPulse className="h-5 w-5" /></div>
+              <img src={wccLogo.url} alt="Women Care Clinic logo" className="h-11 w-11 rounded-2xl object-contain" />
               <div>
                 <div className="text-sm font-semibold text-slate-950">Women Care Clinic</div>
                 <div className="text-xs text-slate-500">Expert, compassionate and privacy-focused women's healthcare in Peshawar.</div>
