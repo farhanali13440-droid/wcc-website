@@ -305,9 +305,11 @@ function Index() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-[#fbfaf7]/90 backdrop-blur-xl">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
           <button onClick={() => navTo("top")} className="flex items-center gap-3 text-left">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-rose-100 text-rose-600">
-              <HeartPulse className="h-5 w-5" />
-            </div>
+            <img
+              src={wccLogo.url}
+              alt="Women Care Clinic logo"
+              className="h-12 w-12 rounded-2xl object-contain"
+            />
             <div>
               <div className="text-sm font-semibold tracking-wide text-slate-950">Women Care Clinic</div>
               <div className="text-[11px] font-medium text-slate-500">Peshawar • Women's Healthcare</div>
