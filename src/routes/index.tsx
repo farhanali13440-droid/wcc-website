@@ -589,7 +589,14 @@ function Index() {
                 ))}
               </div>
             </div>
-            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-7">
+            <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5">
+              <img
+                src={maternityImage.url}
+                alt="New mother holding her newborn baby with maternity nursing support at the hospital"
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover"
+              />
+              <div className="p-7">
               <div className="text-sm font-semibold uppercase tracking-[0.15em] text-rose-300">Evidence-based care</div>
               <h3 className="mt-4 text-2xl font-semibold">Clinical experience that respects informed decisions.</h3>
               <p className="mt-4 text-sm leading-7 text-slate-300">The existing website highlights Dr. Laila's research work related to VBAC, natural birth and carefully monitored normal delivery approaches when medically appropriate.</p>
