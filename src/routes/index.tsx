@@ -8,7 +8,7 @@ import gynaecologyImage from "@/assets/gynaecology.png.asset.json";
 import ultrasoundImage from "@/assets/ultrasound.png.asset.json";
 import treatmentImage from "@/assets/treatment.png.asset.json";
 import maternityImage from "@/assets/maternity-newborn.png.asset.json";
-import receptionImage from "@/assets/clinic-reception.png.asset.json";
+import hospitalExterior from "@/assets/hospital-exterior.jpg.asset.json";
 import wccLogo from "@/assets/wcc-logo.jpeg.asset.json";
 
 const phone = "+923338390207";
