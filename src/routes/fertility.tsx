@@ -1,0 +1,13 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, CheckCircle2, HeartPulse } from "lucide-react";
+import consultationImage from "@/assets/consultation.png.asset.json";
+
+export const Route = createFileRoute("/fertility")({
+  component: FertilityPage,
+  head: () => ({ meta: [{ title: "Fertility & Infertility Care in Peshawar | Women Care Clinic" }, { name: "description", content: "Personalized fertility and infertility guidance at Women Care Clinic in Hayatabad, Peshawar, led by Dr. Laila Nazir." }] }),
+});
+
+function FertilityPage() {
+  const topics = ["Difficulty conceiving", "Irregular cycles", "PCOS-related fertility concerns", "Pre-conception guidance", "Fertility evaluation", "Personalized next-step planning"];
+  return <main className="min-h-screen bg-[#fbfaf7] text-slate-950"><section className="mx-auto max-w-7xl px-5 pb-16 pt-32 sm:px-8"><Link to="/" className="text-sm font-semibold text-[#056170]">← Back to clinic</Link><div className="mt-9 grid items-center gap-10 lg:grid-cols-2"><div><p className="text-sm font-semibold uppercase tracking-[0.18em] text-rose-600">Fertility care</p><h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">Move from uncertainty to a clearer fertility plan.</h1><p className="mt-5 text-lg leading-8 text-slate-600">Discuss fertility concerns, understand your situation and work through an appropriate care pathway based on your history, symptoms and goals.</p><Link to="/appointment" className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#056170] px-6 py-3 text-sm font-semibold text-white">Book fertility consultation <ArrowRight className="h-4 w-4" /></Link></div><img src={consultationImage.url} alt="Private fertility consultation" className="w-full rounded-[2rem] object-cover shadow-xl" /></div></section><section className="bg-white"><div className="mx-auto max-w-6xl px-5 py-16 sm:px-8"><div className="flex items-center gap-3"><HeartPulse className="h-7 w-7 text-[#056170]"/><h2 className="text-3xl font-semibold">Fertility concerns we can discuss</h2></div><div className="mt-8 grid gap-4 sm:grid-cols-2">{topics.map(t=><div key={t} className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-[#fbfaf7] p-4 text-sm text-slate-700"><CheckCircle2 className="h-5 w-5 shrink-0 text-[#056170]"/>{t}</div>)}</div><div className="mt-10 rounded-[2rem] border border-[#cfe0de] p-7"><h2 className="text-2xl font-semibold">Personalized guidance matters</h2><p className="mt-3 text-sm leading-6 text-slate-600">Fertility concerns have many possible contributing factors. The purpose of a consultation is to understand your history and decide what evaluation or next steps are appropriate.</p></div></div></section></main>;
+}
