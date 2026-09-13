@@ -1,0 +1,14 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Facebook, Instagram, MapPin, MessageCircle, Phone, Globe } from "lucide-react";
+
+const phone = "+923338390207";
+const whatsappUrl = `https://wa.me/${phone}`;
+
+export const Route = createFileRoute("/contact")({
+  component: ContactPage,
+  head: () => ({ meta: [{ title: "Contact Women Care Clinic | Peshawar" }, { name: "description", content: "Contact Women Care Clinic in Hayatabad, Peshawar by phone, WhatsApp or social media." }] }),
+});
+
+function ContactPage() {
+  return <main className="min-h-screen bg-[#fbfaf7] text-slate-950"><section className="mx-auto max-w-6xl px-5 pb-16 pt-32 sm:px-8"><Link to="/" className="text-sm font-semibold text-[#056170]">← Back to clinic</Link><div className="mt-9 max-w-3xl"><p className="text-sm font-semibold uppercase tracking-[0.18em] text-rose-600">Contact</p><h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">Get in touch with Women Care Clinic.</h1><p className="mt-5 text-lg leading-8 text-slate-600">For appointments, service questions or clinic directions, use the contact options below.</p></div><div className="mt-10 grid gap-5 md:grid-cols-2"><a href={`tel:${phone}`} className="rounded-3xl bg-white p-7 shadow-sm ring-1 ring-slate-200"><Phone className="h-7 w-7 text-[#056170]"/><h2 className="mt-4 text-xl font-semibold">Call</h2><p className="mt-2 text-sm text-slate-600">+92 333 8390207</p></a><a href={whatsappUrl} target="_blank" rel="noreferrer" className="rounded-3xl bg-[#056170] p-7 text-white"><MessageCircle className="h-7 w-7"/><h2 className="mt-4 text-xl font-semibold">WhatsApp</h2><p className="mt-2 text-sm text-white/80">Message the clinic directly for appointment enquiries.</p></a></div><div className="mt-5 rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-slate-200"><div className="flex gap-4"><MapPin className="h-6 w-6 shrink-0 text-[#056170]"/><div><h2 className="text-xl font-semibold">Clinic address</h2><p className="mt-2 text-sm leading-6 text-slate-600">Health Net Hospital, Sector A-2, Phase 5, Hayatabad, Peshawar, 25100</p></div></div><div className="mt-8 grid gap-4 sm:grid-cols-3"><a href="https://womencareclinic.pk" target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-sm font-semibold"><Globe className="h-5 w-5 text-[#056170]"/> Website</a><a href="https://www.instagram.com/women_care_12/" target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-sm font-semibold"><Instagram className="h-5 w-5 text-[#056170]"/> Instagram</a><a href="https://www.facebook.com/womencareclinicpeshawar/" target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl border border-slate-200 p-4 text-sm font-semibold"><Facebook className="h-5 w-5 text-[#056170]"/> Facebook</a></div></div></section></main>;
+}
